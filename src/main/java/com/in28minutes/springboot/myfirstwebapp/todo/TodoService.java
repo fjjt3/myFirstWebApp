@@ -12,7 +12,7 @@ public class TodoService {
     static {
         todos.add(new Todo(1, "Juan", "Learn AWS",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(2, "Juan", "Learn Azure",
+        todos.add(new Todo(2, "Jose", "Learn Azure",
                 LocalDate.now().plusYears(1), false));
     }
 
