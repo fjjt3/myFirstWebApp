@@ -8,16 +8,24 @@ import java.util.List;
 
 @Service
 public class TodoService {
+
+    private static int todosCount = 0;
+
     private static List<Todo> todos = new ArrayList<>();
     static {
-        todos.add(new Todo(1, "Juan", "Learn AWS",
+        todos.add(new Todo(++todosCount, "Juan", "Learn AWS",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(2, "Jose", "Learn Azure",
+        todos.add(new Todo(++todosCount, "Jose", "Learn Azure",
                 LocalDate.now().plusYears(1), false));
     }
 
     public List<Todo> findByUsername(String username){
         return todos;
+    }
+
+    public void addTodo(String username, String description, LocalDate targetDate, boolean done){
+        Todo todo = new Todo(++todosCount,username, description, targetDate,done);
+        todos.add(todo);
     }
 
 }
